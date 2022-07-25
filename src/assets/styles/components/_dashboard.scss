@@ -22,4 +22,10 @@
             }
         }
     }
+
+    &__clock{
+        @include flex();
+        width: 90%;
+        margin: 50px;
+    }
 }

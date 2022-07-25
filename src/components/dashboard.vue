@@ -29,7 +29,7 @@
       <button @click="endShift()" class="dashboard__main__btn" style="backgroundColor: #ff3366" :class="{ disable: loggedInUser.timeLog[0].end !== null }">סגירת משמרת</button>
     </main>
     <section class="dashboard__clock">
-      dashboard__clock
+      {{ clock }}
     </section>
   </section>
 </template>
@@ -42,9 +42,15 @@ export default {
     customCard,
   },
   data() {
-    return {};
+    return {
+      time: new Date()
+    };
   },
-  created() {},
+  created() {
+    setInterval(() => {
+        this.time = new Date()
+    }, 1000)
+  },
   methods: {
     startShift() {
       this.loggedInUser.timeLog.unshift({
@@ -100,6 +106,10 @@ export default {
         millisecondsOfBreak += this.loggedInUser.timeLog[0].breaks[index].end - this.loggedInUser.timeLog[0].breaks[index].start;
       }
       return millisecondsOfBreak;
+    },
+    clock() {
+      let millisecondsOfCurrentWork = this.time - this.startShiftTime;
+      return new Date(millisecondsOfCurrentWork).getHours() + ":" + new Date(millisecondsOfCurrentWork).getMinutes() + ":" + new Date(millisecondsOfCurrentWork).getSeconds();
     },
   },
 };
