@@ -1,0 +1,20 @@
+.custom-card{
+    @include flex(row, flex-start, baseline);
+    background-color: white;
+    gap: 8px;
+    border-radius: 8px;
+    padding: 15px;
+    min-width: 216px;
+    img{
+        width: 16px;
+        padding-top: 1px
+    }
+    
+    &__main{
+        @include flex(column);
+        &__title{
+            color: #909499;
+        }
+
+    }
+}
