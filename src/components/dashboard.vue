@@ -32,9 +32,6 @@
       dashboard__clock
     </section>
   </section>
-  <pre>
-    {{ isAboutToStartBreak }}
-  </pre>
 </template>
 
 <script>
