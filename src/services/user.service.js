@@ -23,7 +23,8 @@ async function removeUser(userId) {
 
 async function updateUser(user) {
   if (user._id) {
-    return await httpService.put(`user/${user._id}`, user);
+    console.log('user',user)
+    return await httpService.put(`user`, user);
   } else {
     return await httpService.post("user", user);
   }

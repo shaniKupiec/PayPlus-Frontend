@@ -7,7 +7,7 @@ export default {
   },
   getters: {
     loggedInUser({ loggedInUser }) {
-      return loggedInUser;
+      return JSON.parse(JSON.stringify(loggedInUser));
     },
   },
   mutations: {
@@ -21,21 +21,13 @@ export default {
         const user = await userService.getLoggedInUser();
         commit({ type: "setLoggedInUser", user });
         return user;
-      } catch (err) {
-        // dispatch({
-        //   type: "setUserMsg",
-        //   userMsg: {
-        //     type: "err",
-        //     msg: "loading app failed",
-        //   },
-        // });
-      }
+      } catch (err) {}
     },
     async login({ commit, dispatch }, { userCred }) {
       try {
         const user = await authService.login(userCred);
         commit({ type: "setLoggedInUser", user });
-        console.log('user',user)
+        console.log("user", user);
         return user;
       } catch (err) {
         dispatch({
@@ -64,7 +56,7 @@ export default {
     async updateUser({ commit, dispatch }, { user }) {
       try {
         await userService.updateUser(user);
-        commit({ type: "setLoggedInUser", user: user });
+        commit({ type: "setLoggedInUser", user });
       } catch (err) {
         dispatch({
           type: "setUserMsg",

@@ -1,18 +1,22 @@
-.dashboard{
+.dashboard {
     @include flex(column, center, flex-start);
     margin: 40px 60px;
-    &__header{
-        
+    &__header {
     }
-    &__main{
+    &__main {
         @include flex();
         gap: 10px;
 
-        &__btn{
+        &__btn {
             border-radius: 8px;
             width: 158px;
             padding: 11px 28px;
             border: 0;
+
+            &.disable {
+                opacity: 0.7;
+                cursor: not-allowed;
+            }
         }
     }
 }
