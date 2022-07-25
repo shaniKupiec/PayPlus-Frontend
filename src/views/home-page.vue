@@ -1,5 +1,4 @@
 <template>
-  <appHeader />
   <dashboard />
   <main>
     home
@@ -11,12 +10,10 @@
 </template>
 
 <script>
-import appHeader from "../components/app-header.vue";
 import dashboard from "../components/dashboard.vue";
 
 export default {
   components: {
-    appHeader,
     dashboard,
   },
   data() {

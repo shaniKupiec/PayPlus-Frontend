@@ -1,4 +1,9 @@
 .app-header {
     @include flex(row, space-between);
-    margin-bottom: 20px;
+    padding: 17px 26px;
+    background-color: white;
+
+    &__logo{
+        width: 124px;
+    }
 }

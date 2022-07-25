@@ -1,7 +1,7 @@
 <template>
   <header class="app-header">
-    <span class="app-header__logo">logo</span>
-    <span class="app-header__username">{{username}}</span>
+    <img src="../../public/logo.png" class="app-header__logo" alt="" />
+    <span v-if="loggedInUser" class="app-header__username">{{ loggedInUser?.username }}</span>
   </header>
 </template>
 
@@ -14,8 +14,8 @@ export default {
   created() {},
   methods: {},
   computed: {
-    username() {
-      return this.$store.getters.loggedInUser.username;
+    loggedInUser() {
+      return this.$store.getters.loggedInUser;
     },
   },
 };
