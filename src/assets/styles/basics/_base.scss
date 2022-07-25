@@ -9,6 +9,7 @@ body {
   font-family: poppins-regular;
   background-color: #E5E5E5;
   direction: rtl;
+  overflow: hidden;
 }
 
 h1,
@@ -42,4 +43,5 @@ input {
 
 .app {
   // padding: 20px;
+  overflow: hidden;
 }

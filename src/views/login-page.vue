@@ -1,11 +1,13 @@
 <template>
-  <form @submit.prevent="login">
-    <label for="username">User Name</label>
-    <input type="text" placeholder="user name" v-model="username" id="username" />
-    <label for="password">Password</label>
-    <input type="password" placeholder="password" v-model="password" id="password" />
-    <button>submit</button>
-  </form>
+  <main class="login-container">
+    <form @submit.prevent="login" class="login-container__form">
+      <label for="username">שם משתמש</label>
+      <input type="text" placeholder="שם משתמש" v-model="username" id="username" />
+      <label for="password">סיסמה</label>
+      <input type="password" placeholder="סיסמה" v-model="password" id="password" />
+      <button>כניסה למערכת</button>
+    </form>
+  </main>
 </template>
 
 <script>

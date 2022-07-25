@@ -1,0 +1,27 @@
+.login-container {
+    width: 100vw;
+    height: calc(100vh - 73px);
+    @include flex();
+    &__form {
+        @include flex(column, center, baseline);
+        width: 322px;
+        gap: 5px;
+        padding: 25px;
+        background-color: white;
+        box-shadow: 0px 0px 15px -1px #d2d2d2;
+
+        input,
+        button {
+            width: 100%;
+            padding: 11px;
+            border-radius: 8px;
+            border: 1px solid #d2d2d2;
+        }
+
+        button {
+            background-color: #34aa53;
+            color: white;
+            margin-top: 20px;
+        }
+    }
+}
