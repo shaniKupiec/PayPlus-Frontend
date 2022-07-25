@@ -13,8 +13,8 @@
       <tr v-for="shiftData in loggedInUser.timeLog" :key="shiftData.start">
         <td>{{ new Date(shiftData.start).toUTCString() }}</td>
         <td>{{ new Date(shiftData.start).getHours() + ":" + new Date(shiftData.start).getMinutes() }}</td>
-        <td>{{ formatHour(shiftData.end) }}</td>
-        <td>{{ "xx" }}</td>
+        <td>{{ shiftData.end ? new Date(shiftData.end).getHours() + ":" + new Date(shiftData.end).getMinutes() : "" }}</td>
+        <td>{{ shiftData.end ? new Date(shiftData.end - shiftData.start).getHours() + ":" + new Date(shiftData.end - shiftData.start).getMinutes() : new Date(Date.now() - shiftData.start).getHours() + ":" + new Date(Date.now() - shiftData.start).getMinutes() }}</td>
         <td>{{ "xx" }}</td>
         <td>{{ "xx" }}</td>
       </tr>
